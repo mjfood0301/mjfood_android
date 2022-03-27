@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Todayeat">
         <activity
-            android:name=".src.SplashActivity"
+            android:name=".src.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".src.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +25,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
