@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.lee989898.todayeat.MainActivity
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.ActivityLoginBinding
+import com.lee989898.todayeat.src.join.JoinNicknameActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -21,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.loginKakaoLoginIv.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, JoinNicknameActivity::class.java))
 
         }
 
