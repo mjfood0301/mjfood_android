@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Todayeat">
         <activity
+            android:name=".src.modify.ProfileModifyActivity"
+            android:exported="false" />
+        <activity
             android:name=".src.profile.ProfileActivity"
             android:exported="false" />
         <activity
