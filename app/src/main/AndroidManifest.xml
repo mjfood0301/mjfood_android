@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Todayeat">
         <activity
+            android:name=".src.LankingActivity"
+            android:exported="false" />
+        <activity
             android:name=".src.detail.DetailActivity"
             android:exported="false" />
         <activity
