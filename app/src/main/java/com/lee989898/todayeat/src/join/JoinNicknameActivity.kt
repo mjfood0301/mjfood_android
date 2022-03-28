@@ -1,5 +1,6 @@
 package com.lee989898.todayeat.src.join
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.ContentProviderCompat.requireContext
+import com.lee989898.todayeat.MainActivity
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.config.Application
 import com.lee989898.todayeat.databinding.ActivityJoinNicknameBinding
@@ -28,6 +30,10 @@ class JoinNicknameActivity : AppCompatActivity() {
         val dayList = Array(31) { i -> i + 1 }
 
         birthdaySelect(ageList, monthList, dayList)
+
+        binding.joinFinishColorIv.setOnClickListener {
+            startActivity(Intent(this, JoinAllergyActivity::class.java))
+        }
 
         binding.joinNicknameEt.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
