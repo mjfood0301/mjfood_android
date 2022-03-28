@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Todayeat">
         <activity
+            android:name=".src.search.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".src.join.JoinAllergyActivity"
             android:exported="false" />
         <activity
