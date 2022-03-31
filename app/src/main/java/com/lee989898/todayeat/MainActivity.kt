@@ -17,20 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.mainMenuSerachIv.setOnClickListener {
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
-        }
 
-        binding.mainMenuProfileIv.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.mainMenuHeartIv.setOnClickListener {
-            val intent = Intent(this, MyListActivity::class.java)
-            startActivity(intent)
-        }
 
     }
 }

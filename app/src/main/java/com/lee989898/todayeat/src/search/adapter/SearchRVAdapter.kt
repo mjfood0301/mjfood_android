@@ -10,12 +10,24 @@ import com.lee989898.todayeat.R
 
 class SearchRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<SearchRVAdapter.ViewHolder>() {
 
+    interface ItemCLick{
+        fun onClick(view: View, position: Int)
+    }
+    var itemClick: ItemCLick? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchRVAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.search_list_item, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: SearchRVAdapter.ViewHolder, position: Int) {
+
+        if(itemClick != null){
+            holder.itemView.setOnClickListener { v->
+                itemClick?.onClick(v, position)
+            }
+        }
+
         holder.bindItems(items[position])
     }
 
