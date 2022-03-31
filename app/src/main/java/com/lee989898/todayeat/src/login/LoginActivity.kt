@@ -8,6 +8,8 @@ import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.ActivityLoginBinding
 import com.lee989898.todayeat.src.detail.DetailActivity
 import com.lee989898.todayeat.src.join.JoinNicknameActivity
+import com.lee989898.todayeat.src.ranking.RankingActivity
+import com.lee989898.todayeat.src.search.SearchActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -19,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginNoLoginIv.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, RankingActivity::class.java))
         }
 
         binding.loginKakaoLoginIv.setOnClickListener {
