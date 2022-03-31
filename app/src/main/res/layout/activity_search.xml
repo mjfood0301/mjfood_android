@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".src.search.SearchActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
     <ImageView
         android:id="@+id/search_explain_iv"
         android:layout_width="wrap_content"
@@ -36,5 +46,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginNoLoginIv.setOnClickListener {
-            startActivity(Intent(this, DetailActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.loginKakaoLoginIv.setOnClickListener {
