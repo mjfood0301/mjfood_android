@@ -1,6 +1,7 @@
 package com.lee989898.todayeat.src.join
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -18,12 +19,14 @@ import com.lee989898.todayeat.databinding.ActivityJoinNicknameBinding
 class JoinNicknameActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityJoinNicknameBinding
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityJoinNicknameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        sharedPreferences = Application.joinSharedPreferences
 
         val ageList = Array(100) { i -> i + 1923 }
         val monthList = Array(12) { i -> i + 1 }
@@ -32,6 +35,7 @@ class JoinNicknameActivity : AppCompatActivity() {
         birthdaySelect(ageList, monthList, dayList)
 
         binding.joinFinishColorIv.setOnClickListener {
+            sharedPreferences.edit().putString("닉네임", binding.joinNicknameEt.text.toString()).commit()
             startActivity(Intent(this, JoinAllergyActivity::class.java))
         }
 
@@ -41,10 +45,9 @@ class JoinNicknameActivity : AppCompatActivity() {
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-                val sharedPreferences = Application.joinSharedPreferences
-                var year = sharedPreferences.getString("년", "")
-                var month = sharedPreferences.getString("월", "")
-                var day = sharedPreferences.getString("일", "")
+                val year = sharedPreferences.getString("년", "")
+                val month = sharedPreferences.getString("월", "")
+                val day = sharedPreferences.getString("일", "")
 
                 if (binding.joinNicknameEt.length() < 3 ||
                     year == "" ||
@@ -75,8 +78,6 @@ class JoinNicknameActivity : AppCompatActivity() {
         monthList: Array<Int>,
         dayList: Array<Int>
     ) {
-
-        val sharedPreferences = Application.joinSharedPreferences
 
         binding.joinBirthdayYearSp.adapter =
             ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, ageList)

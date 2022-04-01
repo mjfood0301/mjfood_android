@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import com.lee989898.todayeat.MainActivity
+import com.lee989898.todayeat.config.Application
 import com.lee989898.todayeat.databinding.ActivityJoinAllergyBinding
 
 class JoinAllergyActivity : AppCompatActivity() {
@@ -18,6 +19,16 @@ class JoinAllergyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityJoinAllergyBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPreferences = Application.joinSharedPreferences
+        val nickname = sharedPreferences.getString("닉네임", "")
+        val year = sharedPreferences.getString("년", "")
+        val month = sharedPreferences.getString("월", "")
+        val day = sharedPreferences.getString("일", "")
+
+        Log.d("jekkww", "${nickname.toString()}, ${year.toString()}," +
+                "${month.toString()}, ${day.toString()} " )
+
 
         binding.joinAllergyFinishColorIv.setOnClickListener {
             checkAllergy()
