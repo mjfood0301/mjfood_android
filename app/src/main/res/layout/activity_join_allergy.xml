@@ -321,15 +321,15 @@
     </GridLayout>
 
 
-    <ImageView
-        android:id="@+id/join_allergy_finish_no_color_iv"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/join_no_select_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <ImageView-->
+<!--        android:id="@+id/join_allergy_finish_no_color_iv"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:src="@drawable/join_no_select_btn"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <ImageView
         android:id="@+id/join_allergy_finish_color_iv"
@@ -337,7 +337,6 @@
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/join_select_btn"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
