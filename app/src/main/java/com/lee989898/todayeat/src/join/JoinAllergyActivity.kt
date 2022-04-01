@@ -33,6 +33,9 @@ class JoinAllergyActivity : AppCompatActivity() {
         binding.joinAllergyFinishColorIv.setOnClickListener {
             checkAllergy()
             Log.d("allergy", allergyList.toString())
+
+
+            // 나중에 서버 연결 성공에서 구현하는 이동하는 걸로 변경
             startActivity(Intent(this, MainActivity::class.java))
         }
 
