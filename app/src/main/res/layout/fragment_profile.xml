@@ -25,199 +25,106 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <GridLayout
-                android:id="@+id/profile_allergy_gl"
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/profile_allergy_shellfish"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:columnCount="3"
-                android:orientation="horizontal"
-                android:rowCount="3"
+                android:layout_marginTop="10dp"
+                android:text="갑각류"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_iv" />
+
+            <CheckBox
+                android:id="@+id/join_profile_egg"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="달걀"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_shellfish" />
+
+            <CheckBox
+                android:id="@+id/profile_allergy_wheat"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="밀"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/join_profile_egg" />
+
+            <CheckBox
+                android:id="@+id/profile_allergy_milk"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="우유"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_wheat" />
+
+            <CheckBox
+                android:id="@+id/profile_allergy_bean"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="밀"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_milk" />
+
+            <ImageView
+                android:id="@+id/profile_allergy_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/join_allergy_line"
+                app:layout_constraintBottom_toBottomOf="@id/profile_allergy_bean"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/profile_allergy_iv">
+                app:layout_constraintTop_toTopOf="@id/profile_allergy_shellfish" />
 
-                <LinearLayout android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/profile_allergy_nut"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="견과"
+                app:layout_constraintStart_toEndOf="@id/profile_allergy_line"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_iv" />
 
-                    <ImageView
-                        android:id="@+id/profile_allergy_shellfish_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/allergy_shellfist_no_select" />
+            <CheckBox
+                android:id="@+id/profile_allergy_peanut"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="땅콩"
+                app:layout_constraintStart_toEndOf="@id/profile_allergy_line"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_nut" />
 
-                    <ImageView
-                        android:id="@+id/profile_allergy_shellfish_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/allergy_shellfist_select"
-                        android:visibility="gone" />
+            <CheckBox
+                android:id="@+id/profile_allergy_fish"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="생선"
+                app:layout_constraintStart_toEndOf="@id/profile_allergy_line"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_peanut" />
 
-                </LinearLayout>
+            <CheckBox
+                android:id="@+id/profile_allergy_clam"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="조개"
+                app:layout_constraintStart_toEndOf="@id/profile_allergy_line"
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_fish" />
 
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_peanut_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/allergy_peanut_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_peanut_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/allergy_peanut_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_egg_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/allergy_egg_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_egg_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/allergy_egg_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_nut_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_nut_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_nut_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_nut_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_wheat_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_wheat_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_wheat_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_wheat_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_fist_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_fish_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_fist_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_fish_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_milk_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_milk_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_milk_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_milk_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_clam_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_clam_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_clam_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_clam_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_bean_no_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_bean_no_select" />
-
-                    <ImageView
-                        android:id="@+id/profile_allergy_bean_select"
-                        android:layout_width="60dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/allergy_bean_select"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-
-            </GridLayout>
 
             <ImageView
                 android:id="@+id/profile_dislike_iv"
@@ -227,7 +134,7 @@
                 android:layout_marginTop="20dp"
                 android:src="@drawable/profile_dislike_food_explain"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/profile_allergy_gl" />
+                app:layout_constraintTop_toBottomOf="@id/profile_allergy_bean" />
 
             <GridLayout
                 android:id="@+id/profile_dislike_gl"

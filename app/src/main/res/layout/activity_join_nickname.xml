@@ -117,7 +117,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/join_nickname_no_color_finish"
+        android:src="@drawable/join_no_select_btn"
         android:layout_width="60dp"
         android:layout_marginBottom="20dp"
         android:layout_height="60dp"/>
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/join_nickname_color_finish"
+        android:src="@drawable/join_select_btn"
         android:layout_width="60dp"
         android:visibility="gone"
         android:layout_marginBottom="20dp"
