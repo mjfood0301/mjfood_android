@@ -1,5 +1,6 @@
 package com.lee989898.todayeat.src.recommend
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.FragmentRecommendBinding
+import com.lee989898.todayeat.src.join.JoinAllergyActivity
 
 
 class RecommendFragment : Fragment() {
@@ -19,6 +21,13 @@ class RecommendFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRecommendBinding.inflate(inflater, container, false)
+
+//        binding.recommendStartIv.setOnClickListener {
+//            activity?.let{
+//                val intent = Intent(context, JoinAllergyActivity::class.java)
+//                startActivity(intent)
+//            }
+//        }
 
         binding.homeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_recommendFragment_to_homeFragment)
