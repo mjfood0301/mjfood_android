@@ -1,14 +1,14 @@
-package com.lee989898.todayeat.fragments
+package com.lee989898.todayeat.src.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.FragmentHomeBinding
+import com.lee989898.todayeat.src.home.adapter.HomeRVAdapter
 
 class HomeFragment : Fragment() {
 
@@ -25,6 +25,22 @@ class HomeFragment : Fragment() {
     ): View? {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        val rv = binding.rankingListRv
+        // 임시데이터
+        val items = ArrayList<String>()
+        items.add("a")
+        items.add("b")
+        items.add("c")
+        items.add("d")
+        items.add("e")
+        items.add("f")
+        items.add("g")
+
+        val rvAdapter = HomeRVAdapter(items)
+        rv.adapter = rvAdapter
+
+        rv.layoutManager = LinearLayoutManager(context)
 
         binding.likeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_likeFragment)

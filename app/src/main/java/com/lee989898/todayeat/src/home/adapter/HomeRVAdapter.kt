@@ -1,21 +1,19 @@
-package com.lee989898.todayeat.src.ranking.adapter
+package com.lee989898.todayeat.src.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.lee989898.todayeat.R
 
-class RankingRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<RankingRVAdapter.ViewHolder>() {
+class HomeRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<HomeRVAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingRVAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.ranking_item, parent, false)
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: RankingRVAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(items[position])
     }
 

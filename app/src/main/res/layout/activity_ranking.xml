@@ -4,80 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.ranking.RankingActivity">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/ranking_search_iv"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:src="@drawable/search_bar2"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/ranking_map_iv"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="40dp"
-                android:src="@drawable/ranking_map_img"
-                app:layout_constraintBottom_toBottomOf="@id/ranking_search_iv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/ranking_search_iv" />
-
-            <ImageView
-                android:id="@+id/ranking_today_iv"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/ranking_today_select"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ranking_search_iv" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ranking_list_rv"
-                android:layout_width="match_parent"
-                tools:listitem="@layout/ranking_item"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                app:layout_constraintTop_toBottomOf="@id/ranking_today_iv" />
+    tools:context=".src.home.RankingActivity">
 
 
-            <ImageView
-                android:id="@+id/ranking_move_iv"
-                android:layout_width="330dp"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_height="60dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ranking_find_food_img" />
-
-            <ImageView
-                android:id="@+id/ranking_cancel_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="100dp"
-                app:layout_constraintBottom_toBottomOf="@id/ranking_move_iv"
-                app:layout_constraintTop_toTopOf="@id/ranking_move_iv"
-                android:src="@drawable/ranking_find_food_cancel" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
