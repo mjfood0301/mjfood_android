@@ -26,6 +26,19 @@
                 android:src="@drawable/search_bar2"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <EditText
+                android:id="@+id/search_search_et"
+                app:layout_constraintTop_toTopOf="@id/search_bar_iv"
+                app:layout_constraintBottom_toBottomOf="@id/search_bar_iv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_goneMarginStart="10dp"
+                android:layout_marginStart="60dp"
+                android:maxLength="20"
+                android:background="@android:color/transparent"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"/>
+
+
             <ImageView
                 android:id="@+id/search_map_iv"
                 android:layout_width="25dp"
