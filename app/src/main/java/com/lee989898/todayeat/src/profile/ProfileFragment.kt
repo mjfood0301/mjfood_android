@@ -1,4 +1,4 @@
-package com.lee989898.todayeat.fragments
+package com.lee989898.todayeat.src.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

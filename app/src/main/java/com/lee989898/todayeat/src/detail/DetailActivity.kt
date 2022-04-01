@@ -17,8 +17,6 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         val rv : RecyclerView = findViewById(R.id.detail_review_rv)
 
         // 임시데이터
