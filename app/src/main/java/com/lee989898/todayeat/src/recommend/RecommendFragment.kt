@@ -1,4 +1,4 @@
-package com.lee989898.todayeat.fragments
+package com.lee989898.todayeat.src.recommend
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,11 +13,6 @@ import com.lee989898.todayeat.databinding.FragmentRecommendBinding
 class RecommendFragment : Fragment() {
 
     private lateinit var binding: FragmentRecommendBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

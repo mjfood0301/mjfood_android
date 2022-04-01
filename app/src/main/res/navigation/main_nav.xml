@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/recommendFragment"
-        android:name="com.lee989898.todayeat.fragments.RecommendFragment"
+        android:name="com.lee989898.todayeat.src.recommend.RecommendFragment"
         android:label="fragment_recommend"
         tools:layout="@layout/fragment_recommend" >
         <action

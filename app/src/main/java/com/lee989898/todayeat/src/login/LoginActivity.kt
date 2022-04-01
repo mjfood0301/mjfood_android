@@ -22,9 +22,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginKakaoLoginIv.setOnClickListener {
             startActivity(Intent(this, JoinNicknameActivity::class.java))
-
         }
-
-
     }
 }
