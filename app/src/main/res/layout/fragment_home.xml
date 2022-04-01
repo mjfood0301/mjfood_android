@@ -57,28 +57,32 @@
             <ImageView
                 android:id="@+id/home_tap"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:src="@drawable/fragment_home" />
 
             <ImageView
                 android:id="@+id/recommend_tap"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="44dp"
                 android:layout_weight="1"
                 android:src="@drawable/fragment_recommend" />
 
             <ImageView
                 android:id="@+id/like_tap"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:src="@drawable/fragment_like" />
 
             <ImageView
                 android:id="@+id/profile_tap"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:src="@drawable/fragment_profile" />
 

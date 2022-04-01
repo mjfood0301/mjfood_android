@@ -34,6 +34,10 @@ class HomeFragment : Fragment() {
             it.findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
         }
 
+        binding.recommendTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_recommendFragment)
+        }
+
         return binding.root
     }
 

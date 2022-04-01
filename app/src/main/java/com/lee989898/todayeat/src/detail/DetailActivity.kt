@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.ActivityDetailBinding
 import com.lee989898.todayeat.src.detail.adapter.CommentRVAdapter
-import com.lee989898.todayeat.src.mylist.adapter.MyListRVAdapter
 
 class DetailActivity : AppCompatActivity() {
 
@@ -18,14 +17,7 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        if(찜목록에서 온거면)
-//            binding.detailBackIv.setOnClickListener {
-//
-//            }else(검색에서 온거면){
-//                binding.detailBackIv.setOnClickListener {
-//
-//                }
-//        }
+
 
         val rv : RecyclerView = findViewById(R.id.detail_review_rv)
 

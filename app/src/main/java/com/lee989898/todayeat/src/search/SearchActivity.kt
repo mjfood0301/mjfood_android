@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lee989898.todayeat.MainActivity
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.ActivitySearchBinding
-import com.lee989898.todayeat.src.mylist.adapter.MyListRVAdapter
 import com.lee989898.todayeat.src.search.adapter.SearchRVAdapter
 
 class SearchActivity : AppCompatActivity() {

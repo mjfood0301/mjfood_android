@@ -25,7 +25,7 @@
             android:name=".src.profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".src.mylist.MyListActivity"
+            android:name=".src.mylike.MyListActivity"
             android:exported="false" />
         <activity
             android:name=".src.search.SearchActivity"

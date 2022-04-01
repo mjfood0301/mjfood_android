@@ -1,6 +1,5 @@
-package com.lee989898.todayeat.src.mylist.adapter
+package com.lee989898.todayeat.src.mylike.adapter
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,16 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.lee989898.todayeat.R
-import org.w3c.dom.Text
 
-class MyListRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<MyListRVAdapter.ViewHolder>() {
+class LikeRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<LikeRVAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyListRVAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.my_like_list_item_list, parent, false)
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: MyListRVAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(items[position])
     }
 

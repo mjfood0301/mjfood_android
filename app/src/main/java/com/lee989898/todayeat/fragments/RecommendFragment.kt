@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.FragmentRecommendBinding
 
@@ -23,6 +24,19 @@ class RecommendFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRecommendBinding.inflate(inflater, container, false)
+
+        binding.homeTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_recommendFragment_to_homeFragment)
+        }
+
+        binding.likeTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_recommendFragment_to_likeFragment)
+        }
+
+        binding.profileTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_recommendFragment_to_profileFragment)
+        }
+
         return binding.root
     }
 

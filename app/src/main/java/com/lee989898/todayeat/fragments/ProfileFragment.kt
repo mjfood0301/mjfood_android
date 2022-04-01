@@ -33,6 +33,10 @@ class ProfileFragment : Fragment() {
             it.findNavController().navigate(R.id.action_profileFragment_to_likeFragment)
         }
 
+        binding.recommendTap.setOnClickListener {
+            it.findNavController().navigate(R.id.action_profileFragment_to_recommendFragment)
+        }
+
         return binding.root
     }
 
