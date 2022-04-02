@@ -39,9 +39,7 @@ class SearchRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<Searc
 
         fun bindItems(item: String){
             val image = itemView.findViewById<ImageView>(R.id.search_item_iv)
-            val name = itemView.findViewById<TextView>(R.id.search_item_tv)
-            val heartOff = itemView.findViewById<ImageView>(R.id.search_heart_off_iv)
-            val heartOn = itemView.findViewById<ImageView>(R.id.search_heart_on_iv)
+
 
             // 나중에 서버랑 연결
 //            image = item.
