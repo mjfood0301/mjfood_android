@@ -3,6 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/drawable/btn_circle_round.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/drawable/layout_round.xml" value="0.15462962962962962" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/drawable/radio_btn.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/drawable/radio_round.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/drawable/radio_stroke.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/drawable/selector_radio_text.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_join_allergy.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_login.xml" value="0.2015625" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_main.xml" value="0.29739583333333336" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_profile_modify.xml" value="0.29739583333333336" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_ranking.xml" value="0.29438405797101447" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_search.xml" value="0.2015625" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/activity_survey.xml" value="0.5" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/fragment_home.xml" value="0.29739583333333336" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/ranking_item.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/layout/search_list_item.xml" value="0.29739583333333336" />
         <entry key="..\:/Users/joon_/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.2368659420289855" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_detail.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_join_allergy.xml" value="0.1" />
