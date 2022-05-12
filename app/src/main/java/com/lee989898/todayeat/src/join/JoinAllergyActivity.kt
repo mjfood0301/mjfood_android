@@ -102,7 +102,7 @@ class JoinAllergyActivity : AppCompatActivity() {
 //            dislikes = allergyList
 //        )
 
-        val call = ServiceCreator.joinService.postJoin(jwt, id, mutableListOf(1))
+        val call = ServiceCreator.joinService.postJoin(jwt, id, allergyList)
 
         call.enqueue(object : Callback<ResponseJoin> {
 

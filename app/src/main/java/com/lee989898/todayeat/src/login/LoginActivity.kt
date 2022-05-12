@@ -32,9 +32,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val sharedPreferences = Application.tokenSharedPreferences
-        val token = sharedPreferences.getString("kakaotoken", null)
+        val token = sharedPreferences.getString("kakaotoken", "")
 
-        if(token != null){
+        if(token != ""){
             startActivity(Intent(this, MainActivity::class.java))
         }
 
@@ -66,10 +66,8 @@ class LoginActivity : AppCompatActivity() {
                     override fun onPageFinished(view: WebView?, url: String?) {
                         ++count
                         if (count == 2) {
-                            Log.d("LEE333", view?.title.toString())
                             val token = view?.title.toString().substring(35, 182)
                             val id = view?.title.toString().substring(186, 188)
-                            Log.d("LEE333", id)
                             val sharedPreferences = Application.tokenSharedPreferences
                             val editor = sharedPreferences.edit()
                             editor.putInt("id", id.toInt())
@@ -77,7 +75,6 @@ class LoginActivity : AppCompatActivity() {
                             editor.commit()
                             binding.webview.visibility = View.GONE
                             startActivity(Intent(baseContext, JoinAllergyActivity::class.java))
-                            count = 0
                         }
 
 
