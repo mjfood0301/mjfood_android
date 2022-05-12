@@ -9,6 +9,7 @@ import com.lee989898.todayeat.src.main.MainActivity
 import com.lee989898.todayeat.ServiceCreator
 import com.lee989898.todayeat.config.Application
 import com.lee989898.todayeat.databinding.ActivityJoinAllergyBinding
+import com.lee989898.todayeat.src.join.model.ResponseJoin
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

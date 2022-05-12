@@ -31,18 +31,18 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sharedPreferences = Application.tokenSharedPreferences
+        val token = sharedPreferences.getString("kakaotoken", null)
+
+        if(token != null){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
         binding.loginNoLoginIv.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.loginKakaoLoginIv.setOnClickListener {
-
-            val sharedPreferences = Application.tokenSharedPreferences
-            val hello = sharedPreferences.getString("kakaotoken", null)
-
-            if(hello != null){
-                startActivity(Intent(this, JoinAllergyActivity::class.java))
-            }
 
             binding.webview.visibility = View.VISIBLE
             binding.webview.apply {

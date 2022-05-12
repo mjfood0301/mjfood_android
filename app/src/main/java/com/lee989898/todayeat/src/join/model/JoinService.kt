@@ -1,6 +1,5 @@
 package com.lee989898.todayeat.src.join.model
 
-import com.lee989898.todayeat.src.join.ResponseJoin
 import retrofit2.Call
 import retrofit2.http.Header
 import retrofit2.http.POST
