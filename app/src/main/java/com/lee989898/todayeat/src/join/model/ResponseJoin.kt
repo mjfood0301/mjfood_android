@@ -4,9 +4,6 @@ data class ResponseJoin(
     val isSuccess: Boolean,
     val code: Int,
     val message: List<String>,
-    val result: Object
+    val result: String
 )
 
-data class Object(
-    val userId: Int
-)

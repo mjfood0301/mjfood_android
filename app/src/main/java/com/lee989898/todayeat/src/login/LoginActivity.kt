@@ -65,7 +65,19 @@ class LoginActivity : AppCompatActivity() {
                     // 페이지 접속 마치면 호출되는 메소드
                     override fun onPageFinished(view: WebView?, url: String?) {
                         ++count
+                        val sharedPreferences = Application.tokenSharedPreferences
+                        val delete = sharedPreferences.getString("delete", "")
                         if (count == 2) {
+                            val token = view?.title.toString().substring(35, 182)
+                            val id = view?.title.toString().substring(186, 188)
+                            val sharedPreferences = Application.tokenSharedPreferences
+                            val editor = sharedPreferences.edit()
+                            editor.putInt("id", id.toInt())
+                            editor.putString("kakaotoken", token)
+                            editor.commit()
+                            binding.webview.visibility = View.GONE
+                            startActivity(Intent(baseContext, JoinAllergyActivity::class.java))
+                        } else if(delete == "delete"){
                             val token = view?.title.toString().substring(35, 182)
                             val id = view?.title.toString().substring(186, 188)
                             val sharedPreferences = Application.tokenSharedPreferences

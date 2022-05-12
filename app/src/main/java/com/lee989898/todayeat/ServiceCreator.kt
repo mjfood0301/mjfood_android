@@ -5,6 +5,7 @@ import com.lee989898.todayeat.config.XAccessTokenInterceptor
 import com.lee989898.todayeat.src.join.model.JoinService
 import com.lee989898.todayeat.src.login.model.KakaoService
 import com.lee989898.todayeat.src.profile.deletemodel.DeleteService
+import com.lee989898.todayeat.src.profile.modifymodel.ModifyService
 import com.lee989898.todayeat.src.profile.profilemodel.ProfileService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -14,12 +15,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object ServiceCreator {
-    private const val BASE_URL = "http://kaydenserver.shop/"
-    private const val BASE_URL2 = "https://kaydenserver.shop/"
+    private const val BASE_URL = "https://kaydenserver.shop/"
 
     var gson = GsonBuilder().setLenient().create()
-
-
 
     private fun httpLoggin(): HttpLoggingInterceptor{
         val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -42,15 +40,10 @@ object ServiceCreator {
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
-    private val retrofit2: Retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL2)
-        .client(client)
-        .addConverterFactory(ScalarsConverterFactory.create())
-        .addConverterFactory(GsonConverterFactory.create(gson))
-        .build()
 
     val kakaoService: KakaoService = retrofit.create(KakaoService::class.java)
     val joinService: JoinService = retrofit.create(JoinService::class.java)
     val profileService: ProfileService = retrofit.create(ProfileService::class.java)
-    val deleteService: DeleteService = retrofit2.create(DeleteService::class.java)
+    val deleteService: DeleteService = retrofit.create(DeleteService::class.java)
+    val modifyService: ModifyService = retrofit.create(ModifyService::class.java)
 }
