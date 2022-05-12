@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:name=".config.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,19 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Todayeat">
         <activity
-            android:name=".src.home.RankingActivity"
-            android:exported="false" />
-        <activity
             android:name=".src.detail.DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".src.modify.ProfileModifyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".src.profile.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".src.mylike.MyListActivity"
             android:exported="false" />
         <activity
             android:name=".src.search.SearchActivity"
@@ -49,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".src.main.MainActivity"
             android:exported="true" />
     </application>
 

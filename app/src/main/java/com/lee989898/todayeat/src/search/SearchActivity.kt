@@ -1,13 +1,9 @@
 package com.lee989898.todayeat.src.search
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lee989898.todayeat.MainActivity
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.ActivitySearchBinding
 import com.lee989898.todayeat.src.search.adapter.SearchRVAdapter

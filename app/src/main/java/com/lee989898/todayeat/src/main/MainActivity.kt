@@ -1,4 +1,4 @@
-package com.lee989898.todayeat
+package com.lee989898.todayeat.src.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
