@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.lee989898.todayeat.MainActivity
 import com.lee989898.todayeat.databinding.ActivityLoginBinding
 import com.lee989898.todayeat.src.join.JoinNicknameActivity
+import com.lee989898.todayeat.src.recommend.RecommendWorldCup
 
 class LoginActivity : AppCompatActivity() {
 
@@ -17,7 +18,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginNoLoginIv.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+//            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, RecommendWorldCup::class.java))
         }
 
         binding.loginKakaoLoginIv.setOnClickListener {

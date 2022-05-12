@@ -22,7 +22,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:scaleType="fitXY"
-                android:src="@drawable/food_sample_image"
+                android:src="@drawable/food_sample_image1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
