@@ -6,4 +6,3 @@ data class ResponseJoin(
     val message: List<String>,
     val result: String
 )
-

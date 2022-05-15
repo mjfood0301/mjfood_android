@@ -70,22 +70,30 @@ class LoginActivity : AppCompatActivity() {
                         val sharedPreferences = Application.tokenSharedPreferences
                         val delete = sharedPreferences.getString("delete", "")
                         if (count == 2) {
-                            val token = view?.title.toString().substring(35, 182)
-                            val id = view?.title.toString().substring(186, 188)
+                            val kakaoList = mutableListOf<String>()
+                            val kakaoResponse = view?.title.toString().split("=")
+                            for (response in kakaoResponse) {
+                                kakaoList.add(response)
+                            }
+                            val kakaToken = kakaoList[1].split("&")
                             val sharedPreferences = Application.tokenSharedPreferences
                             val editor = sharedPreferences.edit()
-                            editor.putInt("id", id.toInt())
-                            editor.putString("kakaotoken", token)
+                            editor.putInt("id", kakaoList[2].toInt())
+                            editor.putString("kakaotoken", kakaToken[0])
                             editor.commit()
                             binding.webview.visibility = View.GONE
                             startActivity(Intent(baseContext, JoinAllergyActivity::class.java))
-                        } else if(delete == "delete"){
-                            val token = view?.title.toString().substring(35, 182)
-                            val id = view?.title.toString().substring(186, 188)
+                        } else if (delete == "delete") {
+                            val kakaoList = mutableListOf<String>()
+                            val kakaoResponse = view?.title.toString().split("=")
+                            for (response in kakaoResponse) {
+                                kakaoList.add(response)
+                            }
+                            val kakaToken = kakaoList[1].split("&")
                             val sharedPreferences = Application.tokenSharedPreferences
                             val editor = sharedPreferences.edit()
-                            editor.putInt("id", id.toInt())
-                            editor.putString("kakaotoken", token)
+                            editor.putInt("id", kakaoList[2].toInt())
+                            editor.putString("kakaotoken", kakaToken[0])
                             editor.commit()
                             binding.webview.visibility = View.GONE
                             startActivity(Intent(baseContext, JoinAllergyActivity::class.java))
