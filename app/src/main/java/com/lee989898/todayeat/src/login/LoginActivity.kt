@@ -14,12 +14,13 @@ import com.lee989898.todayeat.src.main.MainActivity
 import com.lee989898.todayeat.ServiceCreator
 import com.lee989898.todayeat.config.Application
 import com.lee989898.todayeat.databinding.ActivityLoginBinding
+import com.lee989898.todayeat.src.join.JoinNicknameActivity
+import com.lee989898.todayeat.src.recommend.RecommendWorldCup
 import com.lee989898.todayeat.src.login.model.ResponseKakao
 import com.lee989898.todayeat.src.join.JoinAllergyActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 
 class LoginActivity : AppCompatActivity() {
 
@@ -39,7 +40,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.loginNoLoginIv.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+//            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, RecommendWorldCup::class.java))
         }
 
         binding.loginKakaoLoginIv.setOnClickListener {
