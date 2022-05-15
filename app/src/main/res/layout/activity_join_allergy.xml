@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:text="밀"
+        android:text="콩"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/join_allergy_milk" />
 
@@ -126,199 +126,105 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/join_allergy_bean" />
 
-    <GridLayout
-        android:id="@+id/join_dislike_gl"
-        android:layout_width="match_parent"
+    <CheckBox
+        android:id="@+id/join_dislike_cucumber"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        android:rowCount="3"
+        android:layout_marginTop="10dp"
+        android:text="오이"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/join_allergy_material_explain_iv" />
+
+    <CheckBox
+        android:id="@+id/join_dislike_kimchi"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="김치"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/join_dislike_cucumber" />
+
+    <CheckBox
+        android:id="@+id/join_dislike_carrot"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="당근"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/join_dislike_kimchi" />
+
+    <CheckBox
+        android:id="@+id/join_dislike_bean"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="콩"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/join_dislike_carrot" />
+
+    <CheckBox
+        android:id="@+id/join_dislike_pimento"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="피망"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/join_dislike_bean" />
+
+    <ImageView
+        android:id="@+id/join_dislike_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/join_allergy_line"
+        app:layout_constraintBottom_toBottomOf="@id/join_dislike_pimento"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/join_allergy_material_explain_iv">
+        app:layout_constraintTop_toTopOf="@id/join_dislike_cucumber" />
 
-        <LinearLayout android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/join_dislike_eggplant"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="가지"
+        app:layout_constraintStart_toEndOf="@id/join_dislike_line"
+        app:layout_constraintTop_toBottomOf="@id/join_allergy_material_explain_iv" />
 
-            <ImageView
-                android:id="@+id/join_dislike_cucumber_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:background="@drawable/dislike_cucumber_no_select" />
+    <CheckBox
+        android:id="@+id/join_dislike_spinach"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="시금치"
+        app:layout_constraintStart_toEndOf="@id/join_dislike_line"
+        app:layout_constraintTop_toBottomOf="@id/join_dislike_eggplant" />
 
-            <ImageView
-                android:id="@+id/join_dislike_cucumber_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:background="@drawable/dislike_cucumber_select"
-                android:visibility="gone" />
+    <CheckBox
+        android:id="@+id/join_dislike_paprika"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="파프리카"
+        app:layout_constraintStart_toEndOf="@id/join_dislike_line"
+        app:layout_constraintTop_toBottomOf="@id/join_dislike_spinach" />
 
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_kimchi_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/dislike_kimchi_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_kimchi_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/dislike_kimchi_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_carrot_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/dislike_carrot_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_carrot_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/dislike_carrot_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_bean_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_bean_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_bean_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_bean_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_pimento_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_pimento_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_pimento_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_pimento_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_eggplant_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_eggplant_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_eggplant_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_eggplant_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_spinach_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_spinach_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_spinach_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_spinach_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_paprika_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_paprika_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_paprika_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_paprika_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-        <LinearLayout android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/join_dislike_broccoli_no_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_broccoli_no_select" />
-
-            <ImageView
-                android:id="@+id/join_dislike_broccoli_select"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/dislike_broccoli_select"
-                android:visibility="gone" />
-
-        </LinearLayout>
-
-
-    </GridLayout>
+    <CheckBox
+        android:id="@+id/join_dislike_broccoli"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="브로콜리"
+        app:layout_constraintStart_toEndOf="@id/join_dislike_line"
+        app:layout_constraintTop_toBottomOf="@id/join_dislike_paprika" />
 
 
 <!--    <ImageView-->

@@ -10,9 +10,6 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.core.content.ContentProviderCompat.requireContext
-import com.lee989898.todayeat.MainActivity
-import com.lee989898.todayeat.R
 import com.lee989898.todayeat.config.Application
 import com.lee989898.todayeat.databinding.ActivityJoinNicknameBinding
 
