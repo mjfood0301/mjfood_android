@@ -12,11 +12,11 @@ class FoodData {
         img_source = img
     }
 
-    public fun getName() : String {
+    fun getName() : String {
         return name
     }
 
-    public fun getImg() : Int {
+    fun getImg() : Int {
         return img_source
     }
 

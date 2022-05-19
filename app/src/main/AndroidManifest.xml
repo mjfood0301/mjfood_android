@@ -35,6 +35,9 @@
             android:name=".src.login.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".src.survey.surveyActivity"
+            android:exported="false" />
+        <activity
             android:name=".src.splash.SplashActivity"
             android:exported="true">
             <intent-filter>

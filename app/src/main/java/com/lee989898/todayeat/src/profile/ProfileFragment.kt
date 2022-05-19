@@ -189,8 +189,6 @@ class ProfileFragment : Fragment() {
                             else -> binding.profileAllergyClam.isChecked = true
                         }
                     }
-
-
                 } else Toast.makeText(requireContext(), "프로필 불러오기를 실패하셨습니다.", Toast.LENGTH_SHORT)
                     .show()
             }
