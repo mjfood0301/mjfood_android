@@ -58,6 +58,7 @@ class WorldCupExecutor constructor(val food_list: MutableList<FoodData>, val lay
         //마지막 라운드 시, 우승자 선출
         if (round == 1) {
             winner = next_round_list.pop()
+            win(winner.toString())
             return
         }
 
@@ -71,7 +72,6 @@ class WorldCupExecutor constructor(val food_list: MutableList<FoodData>, val lay
         current_match++
         if (current_match > matchs) {
             nextRound()
-            return
         }
 
         player[1] = round_list.pop()
