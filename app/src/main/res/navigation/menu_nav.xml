@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_nav"
+    app:startDestination="@id/recommendResults">
+
+    <fragment
+        android:id="@+id/recommendFoodList"
+        android:name="com.lee989898.todayeat.RecommendFoodList"
+        android:label="fragment_recommend_food_list"
+        tools:layout="@layout/fragment_recommend_food_list" >
+        <action
+            android:id="@+id/action_recommendFoodList_to_recommendResults"
+            app:destination="@id/recommendResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendResults"
+        android:name="com.lee989898.todayeat.RecommendResults"
+        android:label="fragment_recommend_results"
+        tools:layout="@layout/fragment_recommend_results" >
+        <action
+            android:id="@+id/action_recommendResults_to_recommendFoodList"
+            app:destination="@id/recommendFoodList" />
+    </fragment>
+</navigation>
