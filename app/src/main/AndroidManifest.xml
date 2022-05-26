@@ -38,6 +38,14 @@
             android:name=".src.survey.surveyActivity"
             android:exported="false" />
         <activity
+            android:name=".src.survey.resultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".src.survey.listActivity"
+            android:exported="true" />
+        <activity android:name=".src.menu.MenuActivity"
+                android:exported="false"/>
+        <activity
             android:name=".src.splash.SplashActivity"
             android:exported="true">
             <intent-filter>

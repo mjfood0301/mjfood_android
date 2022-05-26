@@ -14,7 +14,6 @@ import java.util.*
 
 class RecommendWorldCup : AppCompatActivity() {
 
-    var data : Int = 0
     private lateinit var text_status : TextView
     private lateinit var choice1_view : ImageView
     private lateinit var choice2_view : ImageView

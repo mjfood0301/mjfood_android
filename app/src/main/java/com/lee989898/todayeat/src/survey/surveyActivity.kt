@@ -1,5 +1,6 @@
 package com.lee989898.todayeat.src.survey
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,8 @@ import android.view.View
 import android.widget.*
 import androidx.core.view.isInvisible
 import com.lee989898.todayeat.R
+import com.lee989898.todayeat.src.join.JoinNicknameActivity
+import com.lee989898.todayeat.src.menu.MenuActivity
 import kotlin.math.log
 
 class surveyActivity : AppCompatActivity() {
@@ -31,7 +34,9 @@ class surveyActivity : AppCompatActivity() {
         var img = findViewById<ImageView>(R.id.img)
         var group = findViewById<RadioGroup>(R.id.radio_group)
         var next = findViewById<ImageButton>(R.id.go_next)
-
+        next.setOnClickListener {
+            startActivity(Intent(this, MenuActivity::class.java))
+        }
 
 
 
