@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.FragmentRecommendBinding
+import com.lee989898.todayeat.src.menu.MenuActivity
 
 
 class RecommendFragment : Fragment() {

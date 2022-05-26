@@ -2,17 +2,20 @@ package com.lee989898.todayeat
 
 import com.google.gson.GsonBuilder
 import com.lee989898.todayeat.config.XAccessTokenInterceptor
+import com.lee989898.todayeat.src.detail.model.DetailService
 import com.lee989898.todayeat.src.join.model.JoinService
 import com.lee989898.todayeat.src.login.model.KakaoService
 import com.lee989898.todayeat.src.profile.deletemodel.DeleteService
 import com.lee989898.todayeat.src.profile.modifymodel.ModifyService
 import com.lee989898.todayeat.src.profile.profilemodel.ProfileService
+import com.lee989898.todayeat.src.search.model.SearchService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.scalars.ScalarsConverterFactory
+import retrofit2.create
 
 object ServiceCreator {
     private const val BASE_URL = "https://kaydenserver.shop/"
@@ -46,4 +49,6 @@ object ServiceCreator {
     val profileService: ProfileService = retrofit.create(ProfileService::class.java)
     val deleteService: DeleteService = retrofit.create(DeleteService::class.java)
     val modifyService: ModifyService = retrofit.create(ModifyService::class.java)
+    val searchService: SearchService = retrofit.create(SearchService::class.java)
+    val detailService: DetailService = retrofit.create(DetailService::class.java)
 }

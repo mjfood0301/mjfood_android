@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.lee989898.todayeat.R
 
-class SearchRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<SearchRVAdapter.ViewHolder>() {
+class SearchRVAdapter(val items : MutableList<SearchData>): RecyclerView.Adapter<SearchRVAdapter.ViewHolder>() {
 
     interface ItemCLick{
         fun onClick(view: View, position: Int)
@@ -37,12 +37,9 @@ class SearchRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<Searc
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-        fun bindItems(item: String){
+        fun bindItems(item: SearchData){
             val image = itemView.findViewById<ImageView>(R.id.search_item_iv)
 
-
-            // 나중에 서버랑 연결
-//            image = item.
         }
 
     }
