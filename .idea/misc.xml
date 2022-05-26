@@ -8,6 +8,7 @@
         <entry key="..\:/Users/admin/Desktop/project/team2/app/src/main/res/drawable-v24/selector_radio_text.xml" value="0.1" />
         <entry key="..\:/Users/joon_/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.2368659420289855" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_detail.xml" value="0.23550724637681159" />
+        <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_food_detail.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_join_allergy.xml" value="0.264" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_join_nickname.xml" value="0.2368659420289855" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_lanking.xml" value="0.23097826086956522" />
@@ -17,7 +18,7 @@
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_profile.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_profile_modify.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_ranking.xml" value="0.22644927536231885" />
-        <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_search.xml" value="0.24003623188405798" />
+        <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_search.xml" value="0.264" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/activity_splash.xml" value="0.24139492753623187" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/comment_list_item.xml" value="0.264" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/detail_store_list_item.xml" value="0.23324275362318841" />
