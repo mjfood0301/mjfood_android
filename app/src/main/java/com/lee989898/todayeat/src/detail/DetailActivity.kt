@@ -33,6 +33,7 @@ class DetailActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDetailBinding
     private lateinit var adapter: CommentRVAdapter
+    var num = 0
 
     private var items = mutableListOf<ReviewData>()
 
@@ -79,7 +80,23 @@ class DetailActivity : AppCompatActivity() {
                 call: Call<ResponseDetail>,
                 response: Response<ResponseDetail>
             ) {
-                if (response.isSuccessful) {
+                if (num > 0){
+                    val result = response.body()?.result
+                    binding.detailNameTv.text = result?.name
+                    Glide.with(binding.detailFoodIv)
+                        .load(result?.image)
+                        .into(binding.detailFoodIv)
+                        items.add(ReviewData(
+                            result!!.reviews[result.reviews.size-1].content,
+                            result.reviews[result.reviews.size-1].image,
+                            result.reviews[result.reviews.size-1].rate,
+                            result.reviews[result.reviews.size-1].userName
+                        ))
+
+                    adapter.data = items
+                }
+                else if (response.isSuccessful) {
+                    ++num
                     val result = response.body()?.result
                     binding.detailNameTv.text = result?.name
                     Glide.with(binding.detailFoodIv)
