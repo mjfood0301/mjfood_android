@@ -34,7 +34,18 @@ class ProfileFragment : Fragment() {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-        profileNetwork()
+
+        val sharedPreferences = Application.tokenSharedPreferences
+        val jwt = sharedPreferences.getString("kakaotoken", "")
+        val id = sharedPreferences.getInt("id", 0)
+
+
+        if(jwt == ""){
+            Toast.makeText(activity, "로그인 해야 사용할 수 있는 기능입니다.", Toast.LENGTH_SHORT).show()
+        }else{
+            profileNetwork(jwt.toString(), id)
+        }
+
 
         binding.profileDeleteIv.setOnClickListener {
             deleteNetwork()
@@ -59,7 +70,7 @@ class ProfileFragment : Fragment() {
             binding.profileModifyBeforeIv.visibility = View.VISIBLE
             binding.profileModifyIv.visibility = View.INVISIBLE
             checkAllergy()
-            modifyNetwork()
+            modifyNetwork(jwt.toString(), id)
 
         }
 
@@ -78,10 +89,7 @@ class ProfileFragment : Fragment() {
         return binding.root
     }
 
-    private fun modifyNetwork() {
-        val sharedPreferences = Application.tokenSharedPreferences
-        val jwt = sharedPreferences.getString("kakaotoken", "hello")!!
-        val id = sharedPreferences.getInt("id", 0)!!
+    private fun modifyNetwork(jwt: String, id: Int) {
 
         val call = ServiceCreator.modifyService.patchModify(jwt, id, allergyList)
 
@@ -158,11 +166,7 @@ class ProfileFragment : Fragment() {
         })
     }
 
-    private fun profileNetwork() {
-
-        val sharedPreferences = Application.tokenSharedPreferences
-        val jwt = sharedPreferences.getString("kakaotoken", "hello")!!
-        val id = sharedPreferences.getInt("id", 0)!!
+    private fun profileNetwork(jwt: String, id: Int) {
 
         val call = ServiceCreator.profileService.getProfile(jwt, id)
 

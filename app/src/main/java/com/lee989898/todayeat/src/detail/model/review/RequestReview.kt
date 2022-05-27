@@ -1,4 +1,4 @@
-package com.lee989898.todayeat.src.detail.model
+package com.lee989898.todayeat.src.detail.model.review
 
 data class RequestReview(
     val content: String,

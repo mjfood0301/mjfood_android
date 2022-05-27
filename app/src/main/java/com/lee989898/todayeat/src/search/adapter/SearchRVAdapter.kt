@@ -20,8 +20,6 @@ class SearchRVAdapter : RecyclerView.Adapter<SearchRVAdapter.ViewHolder>() {
             notifyDataSetChanged()
         }
 
-
-
     interface ItemCLick {
         fun onClick(view: View, searchData: SearchData)
     }

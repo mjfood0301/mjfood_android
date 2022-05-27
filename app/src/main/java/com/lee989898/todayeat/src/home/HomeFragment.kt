@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.FragmentHomeBinding
+import com.lee989898.todayeat.src.detail.DetailActivity
 import com.lee989898.todayeat.src.home.adapter.HomeRVAdapter
 import com.lee989898.todayeat.src.search.SearchActivity
 
@@ -26,7 +27,7 @@ class HomeFragment : Fragment() {
 
         binding.rankingSearchIv.setOnClickListener {
             activity?.let{
-                val intent = Intent(context, SearchActivity::class.java)
+                val intent = Intent(context, DetailActivity::class.java)
                 startActivity(intent)
             }
         }

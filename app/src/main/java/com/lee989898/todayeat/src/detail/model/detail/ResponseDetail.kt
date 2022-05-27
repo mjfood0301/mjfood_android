@@ -1,17 +1,20 @@
-package com.lee989898.todayeat.src.detail.model
+package com.lee989898.todayeat.src.detail.model.detail
+
+import java.text.DecimalFormat
+
 
 data class ResponseDetail(
     val isSuccess : Boolean,
     val code: Int,
     val message: List<String>,
-    val result: List<GetStoreRes>
+    val result: GetStoreRes
 )
 
 data class GetStoreRes(
     val image: String,
     val likesCount: Int,
-    val locationX: Int,
-    val locationY: Int,
+    val locationX: Double,
+    val locationY: Double,
     val name: String,
     val reviews: List<ReviewDto>,
     val storeId: Int

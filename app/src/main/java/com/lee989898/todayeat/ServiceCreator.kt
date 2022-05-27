@@ -2,8 +2,10 @@ package com.lee989898.todayeat
 
 import com.google.gson.GsonBuilder
 import com.lee989898.todayeat.config.XAccessTokenInterceptor
-import com.lee989898.todayeat.src.detail.model.DetailService
-import com.lee989898.todayeat.src.detail.model.ReviewService
+import com.lee989898.todayeat.src.detail.model.detail.DetailService
+import com.lee989898.todayeat.src.detail.model.like.PostLikeService
+import com.lee989898.todayeat.src.detail.model.review.ReviewService
+import com.lee989898.todayeat.src.detail.model.unlike.PostUnlikeService
 import com.lee989898.todayeat.src.fooddetail.model.FoodDetailService
 import com.lee989898.todayeat.src.join.model.JoinService
 import com.lee989898.todayeat.src.login.model.KakaoService
@@ -57,4 +59,6 @@ object ServiceCreator {
     val foodDetailService: FoodDetailService = retrofit.create(FoodDetailService::class.java)
     val reviewService: ReviewService = retrofit.create(ReviewService::class.java)
     val likeListService: LikeService = retrofit.create(LikeService::class.java)
+    val postLikeService: PostLikeService = retrofit.create(PostLikeService::class.java)
+    val postUnlikeService: PostUnlikeService = retrofit.create(PostUnlikeService::class.java)
 }

@@ -6,33 +6,47 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.lee989898.todayeat.R
+import com.lee989898.todayeat.databinding.MyLikeListItemListBinding
+import com.lee989898.todayeat.src.search.adapter.SearchData
 
-class LikeRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<LikeRVAdapter.ViewHolder>() {
+class LikeRVAdapter: RecyclerView.Adapter<LikeRVAdapter.ViewHolder>() {
+
+    private val _data = mutableListOf<LikeData>()
+    var data: List<LikeData> = _data
+        set(value) {
+            _data.clear()
+            _data.addAll(value)
+            notifyDataSetChanged()
+        }
+
+    interface ItemCLick {
+        fun onClick(view: View, likeData: LikeData)
+    }
+
+    var itemClick: ItemCLick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.my_like_list_item_list, parent, false)
-        return ViewHolder(v)
+        val binding = MyLikeListItemListBinding.inflate(LayoutInflater.from(parent.context),false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(items[position])
+        holder.bindItems(_data[position])
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return _data.size
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(private val binding: MyLikeListItemListBinding): RecyclerView.ViewHolder(binding.root){
 
-        fun bindItems(item: String){
-            val image = itemView.findViewById<ImageView>(R.id.my_like_item_iv)
-            val name = itemView.findViewById<TextView>(R.id.my_like_item_tv)
-            val heartOff = itemView.findViewById<ImageView>(R.id.detail_heart_off_iv)
-            val heartOn = itemView.findViewById<ImageView>(R.id.detail_heart_on_iv)
-
-            // 나중에 서버랑 연결
-//            image = item.
+        fun bindItems(item: LikeData){
+            binding.myLikeItemTv.text = item.name
+            Glide.with(binding.myLikeItemIv)
+                .load(item.image)
+                .into(binding.myLikeItemIv)
         }
 
     }

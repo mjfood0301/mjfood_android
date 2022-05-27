@@ -6,34 +6,45 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.lee989898.todayeat.R
+import com.lee989898.todayeat.databinding.CommentListItemBinding
+import com.lee989898.todayeat.src.detail.model.review.ReviewData
+import com.lee989898.todayeat.src.search.adapter.SearchData
 
-class CommentRVAdapter(val items: ArrayList<String>) :
-    RecyclerView.Adapter<CommentRVAdapter.ViewHolder>() {
+class CommentRVAdapter : RecyclerView.Adapter<CommentRVAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentRVAdapter.ViewHolder {
-        val v =
-            LayoutInflater.from(parent.context).inflate(R.layout.comment_list_item, parent, false)
-        return ViewHolder(v)
+    private val _data = mutableListOf<ReviewData>()
+    var data: List<ReviewData> = _data
+        set(value) {
+            _data.clear()
+            _data.addAll(value)
+            notifyDataSetChanged()
+        }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = CommentListItemBinding.inflate(LayoutInflater.from(parent.context), parent,false)
+        return ViewHolder(binding)
+
     }
 
-    override fun onBindViewHolder(holder: CommentRVAdapter.ViewHolder, position: Int) {
-        holder.bindItems(items[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bindItems(_data[position])
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return _data.size
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(private val binding: CommentListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bindItems(item: String) {
-            val name = itemView.findViewById<TextView>(R.id.comment_list_name_tv)
-            val content = itemView.findViewById<TextView>(R.id.comment_list_content_tv)
-            val date = itemView.findViewById<TextView>(R.id.comment_list_date_tv)
+        fun bindItems(item: ReviewData) {
 
-        // 나중에 서버랑 연결
-//            name = item.
+            binding.commentListNameTv.text = item.userName
+            binding.commentListContentTv.text = item.content
+            Glide.with(binding.sivImage)
+                .load(item.image)
+                .into(binding.sivImage)
         }
     }
 }
