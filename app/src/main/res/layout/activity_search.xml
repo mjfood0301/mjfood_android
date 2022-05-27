@@ -17,17 +17,17 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:src="@drawable/searchbar"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/search_explain_iv" />
 
         <ImageView
             android:id="@+id/iv_search"
-            android:src="@drawable/search"
-            android:layout_marginStart="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/search_bar_iv"
-            app:layout_constraintBottom_toBottomOf="@id/search_bar_iv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/search"
+            app:layout_constraintBottom_toBottomOf="@id/search_bar_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/search_bar_iv" />
 
         <EditText
             android:id="@+id/search_search_et"
@@ -60,7 +60,7 @@
             android:src="@drawable/search_explain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_bar_iv" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -70,9 +70,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toBottomOf="@id/search_explain_iv"
+            app:layout_constraintTop_toBottomOf="@id/search_bar_iv"
             tools:listitem="@layout/search_list_item" />
-
-
+        
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

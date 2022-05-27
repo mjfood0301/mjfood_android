@@ -1,33 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".src.detail.FoodDetailActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/iv_back"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/back_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/tv_food_name"
-        android:text="떡볶이"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/iv_back"
-        app:layout_constraintTop_toTopOf="@id/iv_back"
-        android:layout_marginStart="17dp"
-        app:layout_constraintBottom_toBottomOf="@id/iv_back"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFF2F3"
+        tools:context=".src.fooddetail.FoodDetailActivity">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_food_name"
+            android:text="음식이름"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_back"
+            app:layout_constraintTop_toTopOf="@id/iv_back"
+            android:layout_marginStart="17dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_back"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_food"
+            app:layout_constraintTop_toBottomOf="@id/tv_food_name"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/circle_white_radius_15"
+            android:layout_marginHorizontal="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_food"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="185dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="72dp"
+                android:layout_marginStart="11dp"
+                app:shapeAppearanceOverlay="@style/circle"
+                android:layout_height="145dp" />
+
+            <TextView
+                android:id="@+id/tv_food_info"
+                android:text="음식정보"
+                android:layout_marginStart="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="21dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/iv_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_map"
+            app:layout_constraintTop_toBottomOf="@id/cl_food"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/circle_white_radius_15"
+            android:layout_marginHorizontal="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_map"
+                android:text="주변 음식점"
+                android:textSize="32sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

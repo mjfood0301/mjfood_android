@@ -6,42 +6,58 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.lee989898.todayeat.R
+import com.lee989898.todayeat.databinding.SearchListItemBinding
 
-class SearchRVAdapter(val items : MutableList<SearchData>): RecyclerView.Adapter<SearchRVAdapter.ViewHolder>() {
+class SearchRVAdapter : RecyclerView.Adapter<SearchRVAdapter.ViewHolder>() {
 
-    interface ItemCLick{
-        fun onClick(view: View, position: Int)
+    private val _data = mutableListOf<SearchData>()
+    var data: List<SearchData> = _data
+        set(value) {
+            _data.clear()
+            _data.addAll(value)
+            notifyDataSetChanged()
+        }
+
+
+
+    interface ItemCLick {
+        fun onClick(view: View, searchData: SearchData)
     }
+
     var itemClick: ItemCLick? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchRVAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.search_list_item, parent, false)
-        return ViewHolder(v)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = SearchListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: SearchRVAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        if(itemClick != null){
-            holder.itemView.setOnClickListener { v->
-                itemClick?.onClick(v, position)
+        if (itemClick != null) {
+            holder.itemView.setOnClickListener { v ->
+                itemClick?.onClick(v, _data[position])
             }
         }
 
-        holder.bindItems(items[position])
+        holder.bindItems(_data[position])
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return _data.size
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class ViewHolder(private val binding: SearchListItemBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bindItems(item: SearchData){
-            val image = itemView.findViewById<ImageView>(R.id.search_item_iv)
-
+        fun bindItems(item: SearchData) {
+            binding.searchNameTv.text = item.name
+            Glide.with(binding.searchItemIv)
+                .load(item.image)
+                .into(binding.searchItemIv)
+            for(i in 0 until item.tag.size){
+                binding.searchFastFoodTv.append("#" + item.tag[i] + " ")
+            }
         }
-
     }
-
 }

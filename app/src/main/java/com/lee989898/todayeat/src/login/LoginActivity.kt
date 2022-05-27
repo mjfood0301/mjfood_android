@@ -14,6 +14,7 @@ import com.lee989898.todayeat.src.main.MainActivity
 import com.lee989898.todayeat.ServiceCreator
 import com.lee989898.todayeat.config.Application
 import com.lee989898.todayeat.databinding.ActivityLoginBinding
+import com.lee989898.todayeat.src.detail.DetailActivity
 import com.lee989898.todayeat.src.join.JoinNicknameActivity
 import com.lee989898.todayeat.src.recommend.RecommendWorldCup
 import com.lee989898.todayeat.src.login.model.ResponseKakao
@@ -40,8 +41,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.loginNoLoginIv.setOnClickListener {
-//            startActivity(Intent(this, MainActivity::class.java))
-            startActivity(Intent(this, RecommendWorldCup::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.loginKakaoLoginIv.setOnClickListener {

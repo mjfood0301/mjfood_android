@@ -11,7 +11,7 @@ data class RecommendFoodRes(
     val foodId: Int,
     val image: String,
     val name: String,
-    val tagList: TagDto
+    val tagList: List<TagDto>
 )
 
 data class TagDto(

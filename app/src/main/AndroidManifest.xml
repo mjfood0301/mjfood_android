@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Todayeat"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".src.detail.FoodDetailActivity"
+            android:name=".src.fooddetail.FoodDetailActivity"
             android:exported="false" />
         <activity
             android:name=".src.recommend.RecommendWorldCup"
