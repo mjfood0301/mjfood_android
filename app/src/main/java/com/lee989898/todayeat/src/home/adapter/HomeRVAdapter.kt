@@ -5,32 +5,38 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lee989898.todayeat.R
+import com.lee989898.todayeat.databinding.RankingItemBinding
+import com.lee989898.todayeat.src.detail.model.review.ReviewData
 
-class HomeRVAdapter(val items : ArrayList<String>): RecyclerView.Adapter<HomeRVAdapter.ViewHolder>() {
+class HomeRVAdapter: RecyclerView.Adapter<HomeRVAdapter.ViewHolder>() {
+
+    private val _data = mutableListOf<String>()
+    var data: List<String> = _data
+        set(value) {
+            _data.clear()
+            _data.addAll(value)
+            notifyDataSetChanged()
+        }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.ranking_item, parent, false)
-        return ViewHolder(v)
+        val binding = RankingItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(items[position])
+        holder.bindItems(_data[position])
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return _data.size
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class ViewHolder(private val binding: RankingItemBinding): RecyclerView.ViewHolder(binding.root){
 
         fun bindItems(item: String){
-//            val image = itemView.findViewById<ImageView>(R.id.)
-//            val name = itemView.findViewById<TextView>(R.id.)
-//            val heartOff = itemView.findViewById<ImageView>(R.id.)
-//            val heartOn = itemView.findViewById<ImageView>(R.id.)
 
-            // 나중에 서버랑 연결
-//            image = item.
         }
 
     }

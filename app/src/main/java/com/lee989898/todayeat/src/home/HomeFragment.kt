@@ -9,14 +9,20 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lee989898.todayeat.R
+import com.lee989898.todayeat.databinding.ActivityDetailBinding
 import com.lee989898.todayeat.databinding.FragmentHomeBinding
 import com.lee989898.todayeat.src.detail.DetailActivity
+import com.lee989898.todayeat.src.detail.adapter.CommentRVAdapter
+import com.lee989898.todayeat.src.detail.model.review.ReviewData
 import com.lee989898.todayeat.src.home.adapter.HomeRVAdapter
 import com.lee989898.todayeat.src.search.SearchActivity
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    lateinit var binding: FragmentHomeBinding
+    private lateinit var adapter: HomeRVAdapter
+
+    private var items = mutableListOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,29 +31,15 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        initRecycler()
+
         binding.rankingSearchIv.setOnClickListener {
             activity?.let{
-                val intent = Intent(context, DetailActivity::class.java)
+                val intent = Intent(activity, DetailActivity::class.java)
+//                 val intent = Intent(activity, SearchActivity::class.java)
                 startActivity(intent)
             }
         }
-
-
-        val rv = binding.rankingListRv
-        // 임시데이터
-        val items = ArrayList<String>()
-        items.add("a")
-        items.add("b")
-        items.add("c")
-        items.add("d")
-        items.add("e")
-        items.add("f")
-        items.add("g")
-
-        val rvAdapter = HomeRVAdapter(items)
-        rv.adapter = rvAdapter
-
-        rv.layoutManager = LinearLayoutManager(context)
 
         binding.likeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_likeFragment)
@@ -62,6 +54,13 @@ class HomeFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun initRecycler() {
+
+        adapter = HomeRVAdapter()
+        binding.rankingListRv.adapter = adapter
+        binding.rankingListRv.layoutManager = LinearLayoutManager(activity)
     }
 
 
