@@ -44,12 +44,24 @@ class DetailActivity : AppCompatActivity() {
         initRecycler()
 
 
+
         val sharedPreferences = Application.tokenSharedPreferences
         val jwt = sharedPreferences.getString("kakaotoken", "")
         val id = sharedPreferences.getInt("id", 0)
-        Log.d("LEE22", jwt.toString())
-        Log.d("LEE22", id.toString())
 
+
+
+        binding.detailHeartOffIv.setOnClickListener {
+            postLikeNetWork(jwt.toString(),40 ,id)
+            binding.detailHeartOffIv.visibility = View.GONE
+            binding.detailHeartOnIv.visibility = View.VISIBLE
+        }
+
+        binding.detailHeartOnIv.setOnClickListener {
+            postUnlikeNetWork(jwt.toString(),40 ,id)
+            binding.detailHeartOffIv.visibility = View.VISIBLE
+            binding.detailHeartOnIv.visibility = View.GONE
+        }
 
 //        val storeId = intent.getIntExtra("stordId", 0)
 //        getDetailNetWork(storeId)
@@ -82,6 +94,10 @@ class DetailActivity : AppCompatActivity() {
             ) {
                 if (num > 0){
                     val result = response.body()?.result
+                    if(result?.likesCount!! > 0){
+                        binding.detailHeartOffIv.visibility = View.GONE
+                        binding.detailHeartOnIv.visibility = View.VISIBLE
+                    }
                     binding.detailNameTv.text = result?.name
                     Glide.with(binding.detailFoodIv)
                         .load(result?.image)
@@ -98,6 +114,10 @@ class DetailActivity : AppCompatActivity() {
                 else if (response.isSuccessful) {
                     ++num
                     val result = response.body()?.result
+                    if(result?.likesCount!! > 0){
+                        binding.detailHeartOffIv.visibility = View.GONE
+                        binding.detailHeartOnIv.visibility = View.VISIBLE
+                    }
                     binding.detailNameTv.text = result?.name
                     Glide.with(binding.detailFoodIv)
                         .load(result?.image)
@@ -150,7 +170,7 @@ class DetailActivity : AppCompatActivity() {
         })
     }
 
-    private fun postLikeNetWork(jwt: String,storeId: Int,  userId: Int) {
+    private fun postLikeNetWork(jwt: String, storeId: Int,  userId: Int) {
 
         // 임시데이터
         val call =
@@ -177,7 +197,7 @@ class DetailActivity : AppCompatActivity() {
         })
     }
 
-    private fun postUnlikeNetWork(jwt: String,storeId: Int,  userId: Int) {
+    private fun postUnlikeNetWork(jwt: String, storeId: Int,  userId: Int) {
 
         // 임시데이터
         val call =
@@ -192,7 +212,7 @@ class DetailActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     Log.d("Hello", response.body().toString())
                 } else {
-                    Toast.makeText(this@DetailActivity, "좋아요 누르기 API 연결에 실패하셨습니다.", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@DetailActivity, "싫어요 누르기 API 연결에 실패하셨습니다.", Toast.LENGTH_SHORT)
                         .show()
                 }
             }

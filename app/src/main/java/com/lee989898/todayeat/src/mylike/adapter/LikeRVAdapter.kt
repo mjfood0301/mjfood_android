@@ -28,7 +28,7 @@ class LikeRVAdapter: RecyclerView.Adapter<LikeRVAdapter.ViewHolder>() {
     var itemClick: ItemCLick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = MyLikeListItemListBinding.inflate(LayoutInflater.from(parent.context),false)
+        val binding = MyLikeListItemListBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
