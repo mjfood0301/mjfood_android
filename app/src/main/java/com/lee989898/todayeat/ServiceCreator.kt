@@ -14,6 +14,7 @@ import com.lee989898.todayeat.src.profile.deletemodel.DeleteService
 import com.lee989898.todayeat.src.profile.modifymodel.ModifyService
 import com.lee989898.todayeat.src.profile.profilemodel.ProfileService
 import com.lee989898.todayeat.src.search.model.SearchService
+import com.lee989898.todayeat.src.survey.model.RecommmendService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -61,4 +62,5 @@ object ServiceCreator {
     val likeListService: LikeService = retrofit.create(LikeService::class.java)
     val postLikeService: PostLikeService = retrofit.create(PostLikeService::class.java)
     val postUnlikeService: PostUnlikeService = retrofit.create(PostUnlikeService::class.java)
+    val recommmendService: RecommmendService = retrofit.create(RecommmendService::class.java)
 }

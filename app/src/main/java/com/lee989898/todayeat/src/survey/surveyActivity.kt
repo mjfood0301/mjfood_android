@@ -8,18 +8,32 @@ import android.view.View
 import android.widget.*
 import androidx.core.view.isInvisible
 import com.lee989898.todayeat.R
+import com.lee989898.todayeat.ServiceCreator
+import com.lee989898.todayeat.config.Application
 import com.lee989898.todayeat.src.join.JoinNicknameActivity
+import com.lee989898.todayeat.src.join.model.ResponseJoin
+import com.lee989898.todayeat.src.login.model.ResponseKakao
+import com.lee989898.todayeat.src.main.MainActivity
 import com.lee989898.todayeat.src.menu.MenuActivity
+import com.lee989898.todayeat.src.survey.model.RecommmendService
+import com.lee989898.todayeat.src.survey.model.ResponseRecommend
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.lang.Exception
 import kotlin.math.log
 
 class surveyActivity : AppCompatActivity() {
     var step = 0
-    var result = arrayOfNulls<String>(5)
+    var result = arrayListOf<String>()
     var choose_1 = "음식"
     var choose_2 = "디저트"
     var choose_3 = ""
     var max_step = 1
     var select = ""
+    val names = arrayListOf<String>()
+    val images = arrayListOf<String>()
+    val tag_id = arrayListOf<Int>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,12 +104,77 @@ class surveyActivity : AppCompatActivity() {
             }
             if(step == max_step){
                 //결과 화면으로
-                Log.v(step.toString(), "step_f")
-                Log.v(result[0], "result_0")
-                Log.v(result[1], "result_1")
-                Log.v(result[2], "result_2")
-                Log.v(result[3], "result_3")
-                Log.v(result[4], "result_4")
+                go_result()
+            }
+        }
+    }
+
+    fun go_result(){
+        //invert()
+
+        tag_id.add(19)
+        tag_id.add(29)
+        tag_id.add(30)
+
+        val sharedPreferences = Application.tokenSharedPreferences
+        val jwt = sharedPreferences.getString("kakaotoken", "hello")!!
+        val id = sharedPreferences.getInt("id", 0)!!
+
+        val call = ServiceCreator.recommmendService.getRecommend(jwt, tag_id)
+
+        call.enqueue(object : Callback<ResponseRecommend>  {
+
+            override fun onResponse(
+                call: Call<ResponseRecommend>,
+                response: Response<ResponseRecommend>
+            ) {
+                if (response.isSuccessful) {
+                    try {
+                        val data = response.body()?.result
+                        val index = data?.lastIndex!!.toLong()
+                        for(i in 0..index){
+                            names.add(data[i.toInt()].name)
+                            images.add(data[i.toInt()].image)
+                        }
+
+                        val intent = Intent(this@surveyActivity, resultActivity::class.java)
+                        intent.putExtra("food_name", names)
+                        intent.putExtra("food-image", images)
+                        startActivity(intent)
+                    }catch (e : Exception){
+                        Log.e("Exception in recommend", e.message.toString())
+                    }
+
+                } else {
+                    Toast.makeText(applicationContext, "카카오 API 연결에 실패하셨습니다.", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseRecommend>, t: Throwable) {
+                Log.e("Recommend", "error:$t")
+            }
+        })
+    }
+
+    fun invert(){
+        for(str in result){
+            when(str){
+                "매움" -> tag_id.add(19)
+                "안매움" -> tag_id.add(20)
+                "밥" -> tag_id.add(21)
+                "면" -> tag_id.add(22)
+                "빵" -> tag_id.add(23)
+                "고기" -> tag_id.add(24)
+                "안고기" -> tag_id.add(25)
+                "국물 O" -> tag_id.add(26)
+                "국물 X" -> tag_id.add(27)
+                "차가운 것" -> tag_id.add(28)
+                "따듯한 것" -> tag_id.add(29)
+                "음식" -> tag_id.add(30)
+                "디저트" -> tag_id.add(31)
+                "단 것" -> tag_id.add(32)
+                "안 단 것" -> tag_id.add(33)
             }
         }
     }
