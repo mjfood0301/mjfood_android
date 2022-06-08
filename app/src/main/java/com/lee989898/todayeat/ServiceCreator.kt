@@ -33,7 +33,6 @@ object ServiceCreator {
         return httpLoggingInterceptor
     }
 
-
     val client: OkHttpClient = OkHttpClient.Builder()
         .readTimeout(5000, TimeUnit.MILLISECONDS)
         .connectTimeout(5000, TimeUnit.MILLISECONDS)
@@ -47,8 +46,7 @@ object ServiceCreator {
         .addConverterFactory(ScalarsConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
-
-
+    
     val kakaoService: KakaoService = retrofit.create(KakaoService::class.java)
     val joinService: JoinService = retrofit.create(JoinService::class.java)
     val profileService: ProfileService = retrofit.create(ProfileService::class.java)

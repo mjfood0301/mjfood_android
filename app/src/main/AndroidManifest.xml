@@ -3,6 +3,9 @@
     package="com.lee989898.todayeat">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
 
     <application
         android:name=".config.Application"
@@ -57,6 +60,9 @@
         <activity
             android:name=".src.main.MainActivity"
             android:exported="true" />
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="e2d0ef90ac3452437b0061319c0b4317"/>
+
     </application>
 
 </manifest>

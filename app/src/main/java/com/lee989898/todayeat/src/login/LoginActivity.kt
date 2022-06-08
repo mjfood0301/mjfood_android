@@ -1,7 +1,9 @@
 package com.lee989898.todayeat.src.login
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.webkit.WebChromeClient
@@ -22,6 +24,7 @@ import com.lee989898.todayeat.src.join.JoinAllergyActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.security.MessageDigest
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,6 +35,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        getAppKeyHash()
 
         val sharedPreferences = Application.tokenSharedPreferences
         val token = sharedPreferences.getString("kakaotoken", "")
@@ -106,6 +112,23 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun getAppKeyHash() {
+        try {
+            val info =
+                packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
+            for (signature in info.signatures) {
+                var md: MessageDigest
+                md = MessageDigest.getInstance("SHA")
+                md.update(signature.toByteArray())
+                val something = String(Base64.encode(md.digest(), 0))
+                Log.e("Hash key", something)
+            }
+        } catch (e: Exception) {
+
+            Log.e("name not found", e.toString())
+        }
     }
 
     private fun getKakaoNetwork() {
