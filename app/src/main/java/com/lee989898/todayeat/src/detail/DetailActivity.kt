@@ -43,6 +43,10 @@ class DetailActivity : AppCompatActivity() {
 
         initRecycler()
 
+        binding.detailBackIv.setOnClickListener {
+            finish()
+        }
+
 
 
         val sharedPreferences = Application.tokenSharedPreferences

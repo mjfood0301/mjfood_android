@@ -14,6 +14,7 @@ import com.lee989898.todayeat.databinding.FragmentHomeBinding
 import com.lee989898.todayeat.src.detail.DetailActivity
 import com.lee989898.todayeat.src.detail.adapter.CommentRVAdapter
 import com.lee989898.todayeat.src.detail.model.review.ReviewData
+import com.lee989898.todayeat.src.home.adapter.HomeData
 import com.lee989898.todayeat.src.home.adapter.HomeRVAdapter
 import com.lee989898.todayeat.src.search.SearchActivity
 
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: HomeRVAdapter
 
-    private var items = mutableListOf<String>()
+    private var items = mutableListOf<HomeData>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,12 +32,22 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        items = mutableListOf(
+            HomeData("hh", "피자", 20),
+            HomeData("hh", "스파게티", 30),
+            HomeData("hh", "치킨", 24),
+            HomeData("hh", "족발", 32),
+            HomeData("hh", "족발", 32)
+        )
+
+
         initRecycler()
 
+
         binding.rankingSearchIv.setOnClickListener {
-            activity?.let{
+            activity?.let {
 //                val intent = Intent(activity, DetailActivity::class.java)
-                 val intent = Intent(activity, SearchActivity::class.java)
+                val intent = Intent(activity, SearchActivity::class.java)
                 startActivity(intent)
             }
         }
@@ -59,8 +70,10 @@ class HomeFragment : Fragment() {
     private fun initRecycler() {
 
         adapter = HomeRVAdapter()
+        adapter.data = items
         binding.rankingListRv.adapter = adapter
         binding.rankingListRv.layoutManager = LinearLayoutManager(activity)
+
     }
 
 
