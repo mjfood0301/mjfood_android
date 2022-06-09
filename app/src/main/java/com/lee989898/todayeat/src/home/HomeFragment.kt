@@ -35,8 +35,8 @@ class HomeFragment : Fragment() {
 
         binding.rankingSearchIv.setOnClickListener {
             activity?.let{
-                val intent = Intent(activity, DetailActivity::class.java)
-//                 val intent = Intent(activity, SearchActivity::class.java)
+//                val intent = Intent(activity, DetailActivity::class.java)
+                 val intent = Intent(activity, SearchActivity::class.java)
                 startActivity(intent)
             }
         }
