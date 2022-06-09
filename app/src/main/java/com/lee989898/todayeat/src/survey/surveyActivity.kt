@@ -64,14 +64,14 @@ class surveyActivity : AppCompatActivity() {
         next.setOnClickListener{ view ->
             if(step < max_step) {
                 if (A1.isChecked) {
-                    result[step] = A1.text.toString()
+                    result.add(A1.text.toString())
                 } else if (A2.isChecked) {
-                    result[step] = A2.text.toString()
+                    result.add(A2.text.toString())
                 } else if(A3.isChecked) {
-                    result[step] = A3.text.toString()
+                    result.add(A3.text.toString())
                 }
 
-                if(result[step] != null) {
+                if(result.get(step) != null) {
                     isChange()
                     changeText()
 
@@ -139,8 +139,9 @@ class surveyActivity : AppCompatActivity() {
 
                         val intent = Intent(this@surveyActivity, resultActivity::class.java)
                         intent.putExtra("food_name", names)
-                        intent.putExtra("food-image", images)
+                        intent.putExtra("food_image", images)
                         startActivity(intent)
+                        finish()
                     }catch (e : Exception){
                         Log.e("Exception in recommend", e.message.toString())
                     }

@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.FragmentRecommendBinding
 import com.lee989898.todayeat.src.menu.MenuActivity
+import com.lee989898.todayeat.src.survey.surveyActivity
 
 
 class RecommendFragment : Fragment() {
@@ -22,6 +23,9 @@ class RecommendFragment : Fragment() {
     ): View? {
         binding = FragmentRecommendBinding.inflate(inflater, container, false)
 
+        binding.recommendStartIv.setOnClickListener {
+            startActivity(Intent(activity, surveyActivity::class.java))
+        }
 //        binding.recommendStartIv.setOnClickListener {
 //            activity?.let{
 //                val intent = Intent(context, JoinAllergyActivity::class.java)

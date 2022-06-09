@@ -33,11 +33,8 @@ class FoodDetailActivity : AppCompatActivity() {
         val foodId = intent.getIntExtra("foodId", 0)
         getFoodDetailNetwork(foodId)
 
-
-
         val mapView = MapView(this)
         mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.2325781224618740000000000, 127.1880270943115500000000000), true);
-
 
         val marker = MapPOIItem()
         marker.itemName = "청년 다방"
@@ -58,8 +55,6 @@ class FoodDetailActivity : AppCompatActivity() {
         mapView.setPOIItemEventListener(eventListener)
 
         binding.clKakaoMap.addView(mapView)
-
-
     }
 
     class MarkerEventListener(val context: Context): MapView.POIItemEventListener {
@@ -114,8 +109,7 @@ class FoodDetailActivity : AppCompatActivity() {
                         this@FoodDetailActivity,
                         "디테일 API 연결에 실패하셨습니다.",
                         Toast.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                 }
             }
 

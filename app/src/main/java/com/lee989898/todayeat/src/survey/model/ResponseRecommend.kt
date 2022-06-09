@@ -5,7 +5,7 @@ import com.lee989898.todayeat.src.login.model.Object
 data class ResponseRecommend(
     val isSuccess : Boolean,
     val code: Int,
-    val message: String,
+    val message: List<String>,
     val result: List<GetFoods>
 )
 

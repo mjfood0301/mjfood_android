@@ -21,6 +21,7 @@ import com.lee989898.todayeat.src.join.JoinNicknameActivity
 import com.lee989898.todayeat.src.recommend.RecommendWorldCup
 import com.lee989898.todayeat.src.login.model.ResponseKakao
 import com.lee989898.todayeat.src.join.JoinAllergyActivity
+import com.lee989898.todayeat.src.survey.surveyActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

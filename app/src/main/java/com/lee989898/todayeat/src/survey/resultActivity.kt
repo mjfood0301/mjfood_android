@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import kotlin.random.Random
 import com.lee989898.todayeat.R
 
@@ -58,6 +59,6 @@ class resultActivity : AppCompatActivity(){
         var randomNum = random.nextInt(list_name.size)
 
         text.setText(list_name.get(randomNum))
-        img.setImageResource(list_img.get(randomNum).toInt())
+        img.setImageURI(list_img.get(randomNum).toUri())
     }
 }
