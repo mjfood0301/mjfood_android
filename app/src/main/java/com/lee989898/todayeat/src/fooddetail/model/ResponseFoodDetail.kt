@@ -16,7 +16,7 @@ data class GetFoodRes(
 )
 
 data class MenuDto(
-    val locationX: Int,
-    val locationY: Int,
+    val locationX: Double,
+    val locationY: Double,
     val menuName: String
 )

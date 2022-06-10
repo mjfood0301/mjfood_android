@@ -47,13 +47,13 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_food"
-                android:layout_width="185dp"
+                android:layout_width="145dp"
                 android:layout_height="145dp"
                 android:layout_marginStart="11dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="72dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/food_sample_image3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -71,6 +71,23 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/iv_food"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ingredient"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_info"
+                app:layout_constraintStart_toStartOf="@id/tv_food_info"
+                android:layout_marginTop="10dp"
+                android:text="재료: 떡, 대파, 설탕, \n간장, 고추장, 고춧가루"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/ingredient"
+                app:layout_constraintTop_toBottomOf="@id/ingredient"
+                android:text="종류: 라볶이, 국물떡볶이,\n기름떡볶이,간장떡볶이, \n치즈떡볶이,카레떡볶이 등등"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

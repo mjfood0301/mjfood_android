@@ -1,14 +1,17 @@
 package com.lee989898.todayeat.src.mylike.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.MyLikeListItemListBinding
+import com.lee989898.todayeat.src.detail.DetailActivity
 import com.lee989898.todayeat.src.search.adapter.SearchData
 
 class LikeRVAdapter: RecyclerView.Adapter<LikeRVAdapter.ViewHolder>() {
@@ -34,6 +37,12 @@ class LikeRVAdapter: RecyclerView.Adapter<LikeRVAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(_data[position])
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+            intent.putExtra("friendId", _data[position].storeId)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int {

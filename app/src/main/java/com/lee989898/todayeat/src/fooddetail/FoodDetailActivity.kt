@@ -26,6 +26,8 @@ class FoodDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFoodDetailBinding
     private val eventListener = MarkerEventListener(this)
 
+    lateinit var mapView: MapView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_food_detail)
@@ -33,7 +35,7 @@ class FoodDetailActivity : AppCompatActivity() {
         val foodId = intent.getIntExtra("foodId", 0)
         getFoodDetailNetwork(foodId)
 
-        val mapView = MapView(this)
+        mapView = MapView(this)
         mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.2325781224618740000000000, 127.1880270943115500000000000), true);
 
         val marker = MapPOIItem()
@@ -86,6 +88,7 @@ class FoodDetailActivity : AppCompatActivity() {
         }
     }
 
+
     private fun getFoodDetailNetwork(foodId: Int) {
 
         val call =
@@ -100,9 +103,9 @@ class FoodDetailActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val result = response.body()?.result
                     binding.tvFoodName.text = result?.name
-                    Glide.with(this@FoodDetailActivity)
-                        .load(result?.image)
-                        .into(binding.ivFood)
+//                    Glide.with(this@FoodDetailActivity)
+//                        .load(result?.image)
+//                        .into(binding.ivFood)
                     result!!.menus[0].locationX
                 } else {
                     Toast.makeText(

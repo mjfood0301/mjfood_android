@@ -11,6 +11,7 @@ import com.lee989898.todayeat.R
 import com.lee989898.todayeat.databinding.RankingItemBinding
 import com.lee989898.todayeat.src.detail.DetailActivity
 import com.lee989898.todayeat.src.detail.model.review.ReviewData
+import com.lee989898.todayeat.src.fooddetail.FoodDetailActivity
 
 class HomeRVAdapter : RecyclerView.Adapter<HomeRVAdapter.ViewHolder>() {
 
@@ -33,8 +34,9 @@ class HomeRVAdapter : RecyclerView.Adapter<HomeRVAdapter.ViewHolder>() {
         holder.bindItems(_data[position])
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
-//            intent.putExtra("friendId", _data[position].friendId)
+            // 임시
+            val intent = Intent(holder.itemView.context, FoodDetailActivity::class.java)
+            intent.putExtra("foodId", 34)
             ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
     }
@@ -48,8 +50,6 @@ class HomeRVAdapter : RecyclerView.Adapter<HomeRVAdapter.ViewHolder>() {
 
         fun bindItems(item: HomeData) {
             binding.homeData = item
-
-
         }
 
 

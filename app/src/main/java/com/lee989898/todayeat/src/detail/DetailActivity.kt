@@ -25,6 +25,9 @@ import com.lee989898.todayeat.src.detail.model.unlike.ResponseUnlike
 import com.lee989898.todayeat.src.fooddetail.FoodDetailActivity
 import com.lee989898.todayeat.src.search.adapter.SearchData
 import com.lee989898.todayeat.src.search.adapter.SearchRVAdapter
+import net.daum.mf.map.api.MapPOIItem
+import net.daum.mf.map.api.MapPoint
+import net.daum.mf.map.api.MapView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,6 +37,7 @@ class DetailActivity : AppCompatActivity() {
     lateinit var binding: ActivityDetailBinding
     private lateinit var adapter: CommentRVAdapter
     var num = 0
+    lateinit var mapView: MapView
 
     private var items = mutableListOf<ReviewData>()
 
@@ -47,12 +51,9 @@ class DetailActivity : AppCompatActivity() {
             finish()
         }
 
-
-
         val sharedPreferences = Application.tokenSharedPreferences
         val jwt = sharedPreferences.getString("kakaotoken", "")
         val id = sharedPreferences.getInt("id", 0)
-
 
 
         binding.detailHeartOffIv.setOnClickListener {
@@ -102,10 +103,10 @@ class DetailActivity : AppCompatActivity() {
                         binding.detailHeartOffIv.visibility = View.GONE
                         binding.detailHeartOnIv.visibility = View.VISIBLE
                     }
-                    binding.detailNameTv.text = result?.name
-                    Glide.with(binding.detailFoodIv)
-                        .load(result?.image)
-                        .into(binding.detailFoodIv)
+//                    binding.detailNameTv.text = result?.name
+//                    Glide.with(binding.detailFoodIv)
+//                        .load(result?.image)
+//                        .into(binding.detailFoodIv)
                         items.add(ReviewData(
                             result!!.reviews[result.reviews.size-1].content,
                             result.reviews[result.reviews.size-1].image,
@@ -122,10 +123,10 @@ class DetailActivity : AppCompatActivity() {
                         binding.detailHeartOffIv.visibility = View.GONE
                         binding.detailHeartOnIv.visibility = View.VISIBLE
                     }
-                    binding.detailNameTv.text = result?.name
-                    Glide.with(binding.detailFoodIv)
-                        .load(result?.image)
-                        .into(binding.detailFoodIv)
+//                    binding.detailNameTv.text = result?.name
+//                    Glide.with(binding.detailFoodIv)
+//                        .load(result?.image)
+//                        .into(binding.detailFoodIv)
                     for(i in 0 until result?.reviews?.size!!){
                         items.add(ReviewData(
                             result.reviews[i].content,

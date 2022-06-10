@@ -48,8 +48,8 @@
                         android:layout_marginTop="67dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="19dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/detail_sample_img"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/stm_logo"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="22dp"
-                        android:text="가게명"
+                        android:text="청년 다방"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:textStyle="bold"
@@ -91,7 +91,6 @@
                         android:visibility="gone"
                         app:layout_constraintStart_toEndOf="@id/detail_name_tv"
                         app:layout_constraintTop_toTopOf="@id/detail_name_tv" />
-
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -132,12 +131,12 @@
 
                     <Button
                         android:id="@+id/bt_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
                         android:text="리뷰 쓰기"
                         app:layout_constraintStart_toEndOf="@id/et_review"
-                        android:layout_width="wrap_content"
-                        app:layout_constraintTop_toTopOf="@id/et_review"
-                        android:layout_marginStart="10dp"
-                        android:layout_height="match_parent"/>
+                        app:layout_constraintTop_toTopOf="@id/et_review" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

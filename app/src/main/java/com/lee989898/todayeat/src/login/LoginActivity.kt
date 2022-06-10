@@ -87,6 +87,7 @@ class LoginActivity : AppCompatActivity() {
                             val editor = sharedPreferences.edit()
                             editor.putInt("id", kakaoList[2].toInt())
                             editor.putString("kakaotoken", kakaToken[0])
+                            Log.d("LEEE", kakaToken[0])
                             editor.commit()
                             binding.webview.visibility = View.GONE
                             startActivity(Intent(baseContext, JoinAllergyActivity::class.java))
