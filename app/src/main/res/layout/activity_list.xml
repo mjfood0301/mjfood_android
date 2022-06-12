@@ -1,114 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/main_color2"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".src.survey.listActivity">
+    tools:context=".src.recommendFoodList.listActivity">
+
+    <ImageView
+        android:id="@+id/act_list_logo"
+        android:src="@drawable/mjfood_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/view_round"
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/act_list_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/mjfood_logo" />
-
-        <FrameLayout
+        <LinearLayout
+            android:id="@+id/act_list_top_layout"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:background="@color/white">
+            android:layout_height="wrap_content"
+            android:gravity="right">
+            <ImageButton
+                android:id="@+id/act_list_btn_cancel"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/cancel" />
+        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/view_round"
-                android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/act_list_content_rv"
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </androidx.recyclerview.widget.RecyclerView>
 
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_gravity="right"
-                    android:text="X" />
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="320dp"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:background="@color/white">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="400dp"
-                        android:orientation="vertical">
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="10dp"
-                            android:text="버튼1" />
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="10dp"
-                            android:text="버튼2"/>
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="10dp"
-                            android:text="버튼3"/>
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="10dp"
-                            android:text="버튼1" />
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="10dp"
-                            android:text="버튼2"/>
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="10dp"
-                            android:text="버튼3"/>
-                    </LinearLayout>
-                </ScrollView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <Button
-                        android:layout_width="100dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="10dp"
-                        android:text="버튼" />
-
-                    <Button
-                        android:layout_width="100dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="10dp"
-                        android:text="버튼"/>
-                </LinearLayout>
-            </LinearLayout>
-        </FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/act_list_bottom_layout"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/act_list_btn_random"
+                android:background="@drawable/radom_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/act_list_btn_worldcup"/>
+            <ImageButton
+                android:id="@+id/act_list_btn_worldcup"
+                android:background="@drawable/food_world_cup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/act_list_btn_random"
+                app:layout_constraintRight_toRightOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

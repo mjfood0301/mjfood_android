@@ -8,11 +8,11 @@ class WorldCupLayout constructor(val status : TextView, val choice1 : ImageView,
 
     fun setSelect(action: (Int) -> Unit) {
         choice1.setOnClickListener {
-            action(1)
+            action(0)
         }
 
         choice1.setOnClickListener {
-            action(2)
+            action(1)
         }
     }
 
@@ -21,10 +21,10 @@ class WorldCupLayout constructor(val status : TextView, val choice1 : ImageView,
             null -> {
                 selectAnimate(5F, 5F)
             }
-            1 -> {
+            0 -> {
                 selectAnimate(10F, 0F)
             }
-            2 -> {
+            1 -> {
                 selectAnimate(0F, 10F)
             }
         }

@@ -15,6 +15,7 @@ import com.lee989898.todayeat.src.join.model.ResponseJoin
 import com.lee989898.todayeat.src.login.model.ResponseKakao
 import com.lee989898.todayeat.src.main.MainActivity
 import com.lee989898.todayeat.src.menu.MenuActivity
+import com.lee989898.todayeat.src.survey.model.FoodData
 import com.lee989898.todayeat.src.survey.model.RecommmendService
 import com.lee989898.todayeat.src.survey.model.ResponseRecommend
 import retrofit2.Call
@@ -31,8 +32,11 @@ class surveyActivity : AppCompatActivity() {
     var choose_3 = ""
     var max_step = 1
     var select = ""
-    val names = arrayListOf<String>()
-    val images = arrayListOf<String>()
+
+
+    val foodList = arrayListOf<FoodData>()
+//    val names = arrayListOf<String>()
+//    val images = arrayListOf<String>()
     val tag_id = arrayListOf<Int>()
 
 
@@ -117,7 +121,8 @@ class surveyActivity : AppCompatActivity() {
         tag_id.add(30)
 
         val sharedPreferences = Application.tokenSharedPreferences
-        val jwt = sharedPreferences.getString("kakaotoken", "hello")!!
+//        val jwt = sharedPreferences.getString("kakaotoken", "hello")!!
+        val jwt = "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4Ijo0MiwiaWF0IjoxNjU0ODcxMzk0LCJleHAiOjE2NTYzNDI2MjN9.GBzhAEifWbnb35e8XMYq43ImuTgZ0MrZN4Ky9rul2ew"
         val id = sharedPreferences.getInt("id", 0)!!
 
         val call = ServiceCreator.recommmendService.getRecommend(jwt, tag_id)
@@ -133,13 +138,11 @@ class surveyActivity : AppCompatActivity() {
                         val data = response.body()?.result
                         val index = data?.lastIndex!!.toLong()
                         for(i in 0..index){
-                            names.add(data[i.toInt()].name)
-                            images.add(data[i.toInt()].image)
+                            foodList.add(data[i.toInt()])
                         }
 
                         val intent = Intent(this@surveyActivity, resultActivity::class.java)
-                        intent.putExtra("food_name", names)
-                        intent.putExtra("food_image", images)
+                        intent.putExtra("food_list", foodList)
                         startActivity(intent)
                         finish()
                     }catch (e : Exception){
