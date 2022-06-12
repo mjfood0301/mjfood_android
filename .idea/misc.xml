@@ -37,10 +37,33 @@
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/my_like_list_item_list.xml" value="0.176" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/ranking_item.xml" value="0.21472663139329806" />
         <entry key="..\:/Users/joon_/Desktop/mjfood_android/app/src/main/res/layout/search_list_item.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/drawable-v24/make_round.xml" value="0.29" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/drawable-v24/view_round.xml" value="0.29" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/drawable/circle_white_radius_15.xml" value="0.29" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/drawable/result_img.xml" value="0.29" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/drawable/worldcup_page.xml" value="0.2985" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_food_detail.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_list.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_login.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_menu.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_profile.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_profile_modify.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_ranking.xml" value="0.358695652173913" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_recommend_world_cup.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_result.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_search.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_survey.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/activity_test.xml" value="0.1875" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/comment_list_item.xml" value="0.358695652173913" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/fragment_recommend.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/fragment_recommend_food_list.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/fragment_recommend_results.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/my_like_list_item_list.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/ranking_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/recommend_food_item_list.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mjfood_android/app/src/main/res/layout/search_list_item.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>

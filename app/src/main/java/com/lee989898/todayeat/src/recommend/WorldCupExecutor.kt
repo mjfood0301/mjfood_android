@@ -2,12 +2,17 @@ package com.lee989898.todayeat.src.recommend
 
 import android.os.Handler
 import android.util.Log
+import androidx.core.net.toUri
+import com.lee989898.todayeat.src.survey.model.FoodData
 import java.util.*
 
 class WorldCupExecutor constructor(val food_list: MutableList<FoodData>, val layouts : WorldCupLayout) {
 
     //매치 참가자
-    val player : Array<FoodData> = arrayOf()
+    val player : ArrayList<FoodData> = arrayListOf(
+        FoodData(0, "none", "none", listOf()),
+        FoodData(0, "none", "none", listOf()),
+    )
     var winner : FoodData? = null
 
     //대진 정보
@@ -23,8 +28,9 @@ class WorldCupExecutor constructor(val food_list: MutableList<FoodData>, val lay
     fun execute() {
         setRound()
         setButton()
-        nextRound()
-        nextMatch()
+//        nextRound()
+        Log.d("worldcup", round_list.toString())
+        nextMatch(true)
     }
 
     private fun setRound() {
@@ -35,7 +41,9 @@ class WorldCupExecutor constructor(val food_list: MutableList<FoodData>, val lay
 
         //라운드 설정
         player_size = food_list.size
-        round = player_size*2 //nextRound()에서 절반으로 감소하므로 2배함
+        round = player_size
+        matchs = round/2
+        current_match = 0
     }
     private fun setButton() {
         val select_action: (Int) -> Unit = {
@@ -44,7 +52,7 @@ class WorldCupExecutor constructor(val food_list: MutableList<FoodData>, val lay
             next_round_list.add(player[sel])
             Handler().postDelayed({
                 layouts.select(null)
-                nextMatch()
+                nextMatch(false)
             }, 1000L)
             Log.d("WorldCup", "select $sel")
         }
@@ -68,19 +76,20 @@ class WorldCupExecutor constructor(val food_list: MutableList<FoodData>, val lay
         round_list.addAll(next_round_list)
     }
 
-    fun nextMatch() {
+    fun nextMatch(init : Boolean) {
         current_match++
-        if (current_match > matchs) {
-            nextRound()
-        }
+//        if (current_match > matchs && !init) {
+//            nextRound()
+//        }
 
-        player[1] = round_list.pop()
-        player[2] = round_list.pop()
-        Log.d("worldcup match", round_list.toString())
+        player[0] = round_list.pop() as FoodData
+        player[1] = round_list.pop() as FoodData
+        Log.d("worldcup match",  player[0].toString())
+        Log.d("worldcup match",  player[1].toString())
 
         setStatus()
-        layouts.choice1.setImageResource(player[1]!!.getImg())
-        layouts.choice2.setImageResource(player[2]!!.getImg())
+        layouts.choice1.setImageURI(player[0].image.toUri())
+        layouts.choice2.setImageURI(player[1].image.toUri())
     }
 
     fun setStatus() {

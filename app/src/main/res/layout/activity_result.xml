@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:background="@color/main_color2"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".src.survey.resultActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:orientation="vertical">
 
+
+    <LinearLayout
+        android:id="@+id/act_rst_top_layout"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/act_rst_logo"
+            android:src="@drawable/mjfood_logo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/mjfood_logo" />
-
+            android:layout_marginTop="20dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,67 +33,62 @@
             android:textStyle="bold"
             android:textSize="20dp"
             android:gravity="center"/>
-
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/act_rst_selected_name"
+            android:text="__ 이거다!!"
+            android:textSize="40dp"
+            android:textStyle="bold"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="40dp"
-            android:text="_"
-            android:id="@+id/food"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp">
-
-        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="240dp"
-                android:layout_height="240dp"
-                android:background="@drawable/layout_round"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="220dp"
-                android:layout_height="220dp"
-                android:src="@drawable/sample_1"
-                android:layout_gravity="center"
-                android:background="@drawable/make_round"
-                android:scaleType="fitXY"
-                android:id="@+id/img"/>
-        </FrameLayout>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/act_rst_middle_layout"
+        android:gravity="center"
+        android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/result_img">
+            <ImageView
+                android:id="@+id/img"
+                android:src="@drawable/sample_1"
+                android:background="@drawable/result_img"
+                android:padding="14dp"
+                android:layout_width="300dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_weight="5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
         android:gravity="center">
-
-        <Button
+        <ImageButton
+            android:id="@+id/act_rst_btn_list"
+            android:background="@drawable/recommend_list_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:layout_marginRight="100dp"
-            android:textColor="@color/white"
-            android:text="list"
-            android:id="@+id/list_button"/>
-
-        <Button
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/act_rst_btn_store"/>
+        <ImageButton
+            android:id="@+id/act_rst_btn_store"
+            android:background="@drawable/nearby_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:text="around"
-            android:id="@+id/around_button"/>
-    </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/act_rst_btn_list"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

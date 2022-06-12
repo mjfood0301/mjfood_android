@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">todayeat</string>
-    <string name = "food_lable1">#떡 #매움 #분식 #살찜</string>
-    <string name= "food_lable2">#밥 #분식 #건강 #오이</string>
-    <string name= "food_lable3">#면 #매움 #분식 #살찜</string>
+    <string name="food_lable1">#떡 #매움 #분식 #살찜</string>
+    <string name="food_lable2">#밥 #분식 #건강 #오이</string>
+    <string name="food_lable3">#면 #매움 #분식 #살찜</string>
     <string name="food_name1">떡복이</string>
     <string name="food_name3">라면</string>
     <string name="food_name2">김밥</string>
