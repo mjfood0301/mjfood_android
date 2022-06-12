@@ -59,7 +59,7 @@
                 android:src="@drawable/sample_1"
                 android:background="@drawable/result_img"
                 android:padding="14dp"
-                android:layout_width="220dp"
+                android:layout_width="300dp"
                 android:layout_height="220dp"
                 android:layout_gravity="center"
                 android:scaleType="fitXY"/>

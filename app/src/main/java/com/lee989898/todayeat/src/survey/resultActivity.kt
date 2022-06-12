@@ -26,10 +26,10 @@ class resultActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        var img_sel = findViewById<ImageView>(R.id.img)
-        var text_sel = findViewById<TextView>(R.id.act_rst_selected_name)
-        var btn_list = findViewById<ImageButton>(R.id.act_rst_btn_list)
-        var btn_store = findViewById<ImageButton>(R.id.act_rst_btn_store)
+        img_sel = findViewById<ImageView>(R.id.img)
+        text_sel = findViewById<TextView>(R.id.act_rst_selected_name)
+        btn_list = findViewById<ImageButton>(R.id.act_rst_btn_list)
+        btn_store = findViewById<ImageButton>(R.id.act_rst_btn_store)
 
         img_sel.clipToOutline = true
         foodList = intent.getStringArrayListExtra("food_list") as ArrayList<FoodData>
